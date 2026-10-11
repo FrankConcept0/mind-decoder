@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The Mind Decoder: a short self-reflection experience from Mind Spectrum.">
+<title>The Mind Decoder | Mind Spectrum</title>
+<style>
+:root{color-scheme:dark;--bg:#080d20;--panel:#111a35;--text:#f5f7ff;--muted:#b9c3e2;--blue:#60a5fa;--violet:#a78bfa;--line:#29365d}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(ellipse at 15% 0%,#202b63 0,transparent 42%),radial-gradient(ellipse at 100% 30%,#39235e 0,transparent 35%),var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+main{width:min(760px,100%);margin:auto;padding:28px 18px 56px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:750;letter-spacing:.08em;font-size:.8rem;color:#dbeafe}
+.logo{display:grid;place-items:center;width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--violet));color:#10152d;font-size:1.3rem}
+.hero{text-align:center;padding:42px 0 24px}
+.eyebrow{color:#c4b5fd;font-size:.78rem;font-weight:800;letter-spacing:.18em}
+h1{font-size:clamp(2.2rem,8vw,4.3rem);line-height:1.05;letter-spacing:-.045em;margin:12px 0;background:linear-gradient(100deg,#fff,#bfdbfe 48%,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
+.subtitle{font-size:clamp(1.1rem,3vw,1.4rem);font-weight:650;margin:16px 0 8px}
+.intro{max-width:560px;color:var(--muted);margin:0 auto 24px}
+.pills{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:20px 0 28px}
+.pill{border:1px solid #35416c;border-radius:999px;padding:6px 12px;color:#dbeafe;font-size:.85rem;background:#111a35a8}
+button,.button{border:0;border-radius:14px;padding:14px 20px;font:inherit;font-weight:750;cursor:pointer;display:inline-flex;justify-content:center;align-items:center;gap:8px;text-decoration:none;transition:transform .15s ease,filter .15s ease}
+button:hover,.button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #fbbf24;outline-offset:3px}
+.primary{background:linear-gradient(100deg,#60a5fa,#a78bfa);color:#10152d;box-shadow:0 10px 30px #5b7cfa30}
+.secondary{background:#1c2749;color:var(--text);border:1px solid #35416c}
+.full{width:100%}
+.card{background:linear-gradient(145deg,#131d3cfa,#10172ff5);border:1px solid #2c3962;border-radius:24px;padding:clamp(20px,5vw,34px);box-shadow:0 22px 65px #0003}
+.hidden{display:none!important}
+.progress-head{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:.9rem;margin-bottom:10px}
+.progress{height:7px;border-radius:99px;background:#293454;overflow:hidden;margin-bottom:26px}
+.progress span{height:100%;display:block;background:linear-gradient(90deg,var(--blue),var(--violet));width:0;transition:width .2s ease}
+h2{font-size:clamp(1.4rem,5vw,2rem);line-height:1.25;margin:0 0 20px}
+.answers{display:grid;gap:11px}
+.answer{display:flex;align-items:flex-start;text-align:left;gap:12px;background:#172243;border:1px solid #34416b;border-radius:14px;padding:14px;color:var(--text);width:100%;font-weight:550}
+.answer .letter{flex:0 0 30px;width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:#27345a;color:#c7d2fe;font-weight:800}
+.answer[aria-pressed="true"]{border-color:#a78bfa;background:#262752;box-shadow:0 0 0 1px #a78bfa}
+.nav{display:flex;justify-content:space-between;gap:12px;margin-top:22px}
+.nav button{flex:1}
+.result-kicker{color:#c4b5fd;font-weight:800;letter-spacing:.12em;font-size:.78rem}
+.result-title{margin:8px 0 12px;font-size:clamp(2rem,7vw,3rem)}
+.result-copy{color:var(--muted)}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0}
+.result-box{padding:16px;border:1px solid #303d65;background:#17213e;border-radius:16px}
+.result-box h3{font-size:1rem;margin:0 0 8px}
+.result-box p,.result-box ul{margin:0;color:#d1d9f2;font-size:.95rem}
+.result-box ul{padding-left:19px}
+.notice{font-size:.85rem;color:#aebadb;border-top:1px solid #29365d;padding-top:16px;margin-top:20px}
+.socials{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.socials a{font-size:.95rem}
+footer{text-align:center;color:#8795bd;font-size:.82rem;padding:24px 0 0}
+@media(max-width:520px){.result-grid,.socials{grid-template-columns:1fr}.hero{padding-top:32px}.nav button{padding:12px 10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main>
+  <div class="brand"><div class="logo" aria-hidden="true">◉</div><span>MIND SPECTRUM</span></div>
+  <section id="intro" class="hero">
+    <div class="eyebrow">MIND SPECTRUM PRESENTS</div>
+    <h1>THE MIND<br>DECODER</h1>
+    <p class="subtitle">How well do you understand your mind?</p>
+    <p class="intro">Seven questions. Five possible patterns. One opportunity to understand yourself a little better. Explore how you may respond to everyday situations—there are no right or wrong answers.</p>
+    <div class="pills"><span class="pill">🧠 7 questions</span><span class="pill">⏱ 60–90 seconds</span><span class="pill">✨ Self-reflection</span></div>
+    <button id="start" class="primary">Decode My Mind <span aria-hidden="true">→</span></button>
+  </section>
+
+  <section id="quiz" class="card hidden" aria-live="polite">
+    <div class="progress-head"><span id="step-label">Question 1 of 7</span><span id="percent">14% complete</span></div>
+    <div class="progress" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="7" aria-valuenow="1" id="progress"><span id="progress-bar"></span></div>
+    <h2 id="question-title"></h2>
+    <div id="answers" class="answers"></div>
+    <div class="nav"><button id="back" class="secondary">← Back</button><button id="next" class="primary" disabled>Next →</button></div>
+  </section>
+
+  <section id="result" class="card hidden" aria-live="polite">
+    <div class="result-kicker">YOUR MIND DECODER REFLECTION</div>
+    <h2 id="result-title" class="result-title"></h2>
+    <p id="result-description" class="result-copy"></p>
+    <div class="result-grid">
+      <div class="result-box"><h3>✨ Potential strengths</h3><ul id="strengths"></ul></div>
+      <div class="result-box"><h3>🌱 A possible challenge</h3><p id="challenge"></p></div>
+      <div class="result-box" style="grid-column:1/-1"><h3>📝 Try this reflection</h3><p id="exercise"></p></div>
+    </div>
+    <p id="tie-note" class="result-copy hidden"></p>
+    <div class="socials">
+      <!-- Replace the placeholder URLs below with your real social profile links. -->
+      <a class="button primary" id="facebook-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Follow Mind Spectrum on Facebook ↗</a>
+      <a class="button secondary" id="instagram-link" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Follow Mind Spectrum on Instagram ↗</a>
+    </div>
+    <button id="retake" class="secondary full" style="margin-top:14px">Retake the quiz</button>
+    <p class="notice">This activity is for general education and self-reflection. These patterns are not diagnoses or validated personality types, and this quiz is not a clinical assessment. Your answers stay in this browser session and are not sent to a server.</p>
+  </section>
+  <footer>Understand your mind. Improve how you live. <br>© Mind Spectrum</footer>
+</main>
+<script>
+const questions = [
+ {q:"When an important decision is in front of you, what do you usually do first?",a:[
+  ["Replay the possibilities and think through what could go wrong","overthinker"],
+  ["Put it aside until I feel ready to face it","avoider"],
+  ["Ask people I trust what they think, so I don't disappoint anyone","peoplePleaser"],
+  ["List the options and choose a practical next step","problemSolver"],
+  ["Pause to notice how I feel before deciding","emotionalProcessor"]]},
+ {q:"When someone you care about becomes unusually quiet, what is your first reaction?",a:[
+  ["Wonder if I said or did something wrong","overthinker"],
+  ["Give them space and wait for the feeling to pass","avoider"],
+  ["Check repeatedly that they are okay with me","peoplePleaser"],
+  ["Ask calmly if anything needs to be addressed","problemSolver"],
+  ["Notice the emotions it brings up and sit with them","emotionalProcessor"]]},
+ {q:"When stress starts building up, what are you most likely to do?",a:[
+  ["Think about the problem from many angles","overthinker"],
+  ["Distract myself or postpone dealing with it","avoider"],
+  ["Keep helping others even when I'm overwhelmed","peoplePleaser"],
+  ["Break the situation into manageable tasks","problemSolver"],
+  ["Name what I'm feeling and work through it","emotionalProcessor"]]},
+ {q:"After a disagreement, what tends to happen next for you?",a:[
+  ["I replay the conversation and think of what I should have said","overthinker"],
+  ["I withdraw for a while because conflict feels draining","avoider"],
+  ["I try to restore peace, even if I have to give in","peoplePleaser"],
+  ["I look for a clear way to resolve the issue","problemSolver"],
+  ["I need time to process how the interaction affected me","emotionalProcessor"]]},
+ {q:"When you receive criticism, what response feels most familiar?",a:[
+  ["I keep analyzing what it means about me","overthinker"],
+  ["I avoid thinking about it or discussing it","avoider"],
+  ["I focus on making the other person happy with me again","peoplePleaser"],
+  ["I identify what is useful and decide what to change","problemSolver"],
+  ["I acknowledge my feelings before deciding how to respond","emotionalProcessor"]]},
+ {q:"When a task feels overwhelming, what do you tend to do?",a:[
+  ["Plan repeatedly because I want to get it exactly right","overthinker"],
+  ["Move to something easier and return to it later—sometimes much later","avoider"],
+  ["Put other people's requests first, even when I'm busy","peoplePleaser"],
+  ["Choose the first small step and start there","problemSolver"],
+  ["Check in with myself and work out what support I need","emotionalProcessor"]]},
+ {q:"Which statement feels closest to how you approach personal growth?",a:[
+  ["Understanding every detail helps me feel prepared","overthinker"],
+  ["I change at my own pace and avoid forcing difficult feelings","avoider"],
+  ["I feel good when the people around me are doing well","peoplePleaser"],
+  ["I prefer setting a goal and taking practical action","problemSolver"],
+  ["I grow by noticing, accepting, and learning from my emotions","emotionalProcessor"]]}
+];
+const patterns = {
+ overthinker:{title:"The Overthinker",description:"You may look for certainty by examining possibilities and replaying situations. Reflection can be useful, though too much analysis can sometimes make decisions feel harder.",strengths:["Thoughtful and observant","Often considers risks and different perspectives"],challenge:"Knowing when you have enough information to act instead of continuing to analyze.",exercise:"Set a five-minute limit to write down your main concern, one thing you know for sure, and one small next step."},
+ avoider:{title:"The Avoider",description:"You may create distance from uncomfortable situations to protect your energy. Taking a pause can help; if postponing becomes a pattern, concerns may remain unresolved.",strengths:["Can recognize when space is needed","May avoid reacting impulsively in a tense moment"],challenge:"Returning to an uncomfortable conversation or task after taking a break.",exercise:"Choose one small thing you have been putting off. Spend just five minutes making a start, then decide on the next step."},
+ peoplePleaser:{title:"The People-Pleaser",description:"You may be attentive to other people's feelings and value harmony. Caring about others is a strength, and your own needs also deserve consideration.",strengths:["Empathetic and considerate","Often works to maintain connection"],challenge:"Setting boundaries without feeling responsible for everyone's reactions.",exercise:"Before agreeing to a request, pause and ask: “Do I have the time and energy for this?” Practise giving yourself time to decide."},
+ problemSolver:{title:"The Problem-Solver",description:"You may respond to challenges by identifying options and taking practical action. This can create momentum, while some situations also need patience or emotional understanding.",strengths:["Action-oriented and organized","Looks for constructive ways forward"],challenge:"Allowing space for feelings when a problem cannot be fixed immediately.",exercise:"Before choosing a solution, name the emotion involved and ask whether the situation needs action, understanding, or both."},
+ emotionalProcessor:{title:"The Emotional Processor",description:"You may pay attention to feelings and need time to understand how experiences affect you. Emotional awareness can be valuable, and it can work alongside practical action.",strengths:["Attentive to inner experience","Can make room for emotional complexity"],challenge:"Moving from reflection to a manageable action when one is needed.",exercise:"Write down what you feel, what may have triggered it, and one kind or useful action you can take for yourself."}
+};
+let current=0, selections=Array(questions.length).fill(null);
+const $=id=>document.getElementById(id);
+function show(id){["intro","quiz","result"].forEach(x=>$(x).classList.toggle("hidden",x!==id));}
+function renderQuestion(){
+ const item=questions[current]; $("step-label").textContent=`Question ${current+1} of ${questions.length}`;
+ const pct=Math.round((current+1)/questions.length*100); $("percent").textContent=`${pct}% complete`;
+ $("progress-bar").style.width=pct+"%"; $("progress").setAttribute("aria-valuenow",current+1);
+ $("question-title").textContent=item.q; $("answers").replaceChildren();
+ item.a.forEach((option,i)=>{const b=document.createElement("button");b.type="button";b.className="answer";b.setAttribute("aria-pressed",selections[current]===i?"true":"false");
+ const letter=document.createElement("span");letter.className="letter";letter.textContent=String.fromCharCode(65+i);
+ const label=document.createElement("span");label.textContent=option[0];b.append(letter,label);b.addEventListener("click",()=>{selections[current]=i;renderQuestion();$("next").focus();});$("answers").append(b);});
+ $("back").disabled=current===0; $("back").style.opacity=current===0?".45":"1";
+ $("next").disabled=selections[current]===null; $("next").textContent=current===questions.length-1?"See My Result →":"Next →";
+}
+function showResult(){
+ const scores={overthinker:0,avoider:0,peoplePleaser:0,problemSolver:0,emotionalProcessor:0};
+ selections.forEach((choice,i)=>{scores[questions[i].a[choice][1]]++;});
+ const max=Math.max(...Object.values(scores));const winners=Object.keys(scores).filter(k=>scores[k]===max);
+ const isTie=winners.length>1; const data=isTie?null:patterns[winners[0]];
+ $("result-title").textContent=isTie?"Your Mixed Pattern":data.title;
+ $("result-description").textContent=isTie
+ ?`Your answers reflect more than one pattern: ${winners.map(k=>patterns[k].title).join(" + ")}. You may respond differently depending on the situation. This result is a prompt for reflection, not a fixed label.`
+ :data.description;
+ const strengths=$("strengths");strengths.replaceChildren();
+ (isTie?["You may draw on different ways of responding in different situations.","Your responses may shift with context and what you need."]:data.strengths).forEach(s=>{const li=document.createElement("li");li.textContent=s;strengths.append(li);});
+ $("challenge").textContent=isTie?"Notice which response helps in a given situation, and which response might be less useful there.":data.challenge;
+ $("exercise").textContent=isTie?"Think of one recent situation. What did you need most at the time: clarity, space, connection, action, or emotional understanding?":data.exercise;
+ $("tie-note").classList.toggle("hidden",!isTie);show("result");window.scrollTo({top:0,behavior:"smooth"});
+}
+$("start").addEventListener("click",()=>{current=0;show("quiz");renderQuestion();$("question-title").focus?.();});
+$("back").addEventListener("click",()=>{if(current>0){current--;renderQuestion();}});
+$("next").addEventListener("click",()=>{if(selections[current]===null)return;if(current<questions.length-1){current++;renderQuestion();}else showResult();});
+$("retake").addEventListener("click",()=>{current=0;selections=Array(questions.length).fill(null);show("intro");window.scrollTo({top:0,behavior:"smooth"});});
+</script>
+</body>
+</html>
